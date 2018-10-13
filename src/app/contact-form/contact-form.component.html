@@ -1,0 +1,54 @@
+<!-- 77 -->
+<!-- 83 -->
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div ngModelGroup="contact" #contact="ngModelGroup">
+      <div *ngIf="!contact.valid">contact is not valid</div>
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <!-- 78 -->
+        <!-- 80 -->
+        <input required minlength="3" maxlength="10" pattern="banana" ngModel name="firstname" #firstName="ngModel"
+          (change)="log(firstName)" id="firstname" type="text" class="form-control">
+        <!-- 79 -->
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+          <div *ngIf="firstName.errors.required">First Name is Required</div>
+          <div *ngIf="firstName.errors.minlength">First Name minlength limit is {{
+            firstName.errors.minlength.requiredLength }}</div>
+          <div *ngIf="firstName.errors.pattern">First Name pattern is not match</div>
+        </div>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Commnet</label>
+    <textarea ngModel name="comment" id="comment" cols="30" rows="5" class="form-control"></textarea>
+  </div>
+  <!-- 87 -->
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ngModel name="isSubscribed"> Subscript to this email
+    </label>
+  </div>
+  <!-- 88 -->
+  <div class="form-group">
+    <label for="contactMethod">Contact Method</label>
+    <select multiple ngModel name="contactMethod" id="contactMethod" class="form-control">
+      <option value=""></option>
+      <option *ngFor="let method of contactMethods" [value]="method.id">
+        {{ method.name }}
+      </option>
+    </select>
+  </div>
+  <!-- 89 -->
+    <label for="contactRadio">contactRadio</label>
+    <div class="radio" *ngFor="let method of contactMethods">
+        <label>      
+          <input ngModel name="contactRadio" type="radio" [value]="method.id">
+            {{ method.name }}
+        </label>
+    </div>
+
+  <p> {{ f.value | json }}</p>
+  <!-- 86 -->
+  <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>

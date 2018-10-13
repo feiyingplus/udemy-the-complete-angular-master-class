@@ -1,20 +1,100 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!-- <courses>ss</courses> -->
+<h1>Angular</h1>
+<!-- <app-root [glyphicon_star_onoff]="post.isFavorite"></app-root> -->
+<!-- <courses></courses> -->
+<!-- <app-authors></app-authors> -->
+<!-- <app-favorite [is-favorite]="post.isPostFavorite" (changeEvent)="onFaviroteChange($event)"></app-favorite> -->
+<!-- <bootstrap-panel>
+    <div class="heading">Heading in app</div>
+    <div class="body">
+        <h2>Body2</h2>
+        <p>something here...3</p>
+    </div>
+</bootstrap-panel> -->
+<app-like
+    [likesCount]="tweet.likesCount"
+    [isActive]="tweet.isLiked"
+></app-like>
+<br/>
+<p>=====app script below======</p>
+<!-- no # for the *ngIf line -->
+<!-- 64. ngIf -->
+<!-- <div *ngIf="courses.length > 0; then coursesList else noCourses"> 
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+<ng-template #coursesList>
+    List of courses
+</ng-template>
+<ng-template #noCourses>
+    No courses yet
+</ng-template> -->
+<!-- 65. Hidden Property -->
+<!-- <div [hidden]="courses.length == 0">
+    List of courses
+</div>
+<div [hidden]="courses.length > 0">
+    No courses yet
+</div> -->
+<!-- 66. ngSwitchCase -->
+<!-- <ul class="nav nav-pills">
+    <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
+    <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>
+
 </ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">map view content</div>
+    <div *ngSwitchCase="'list'">list view content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div> -->
+<!-- 67. ngForOf -->
+<!-- <ul>
+    <li *ngFor="let course of courses; last as isLast">
+        {{ course.name }} <span *ngIf="isLast">(last element of the list)</span>
+    </li>
+</ul> -->
+<!-- 68. ngFor and Change Detection -->
+<!-- <button (click)="onAdd()">Add</button>
+<ul>
+    <li *ngFor="let course of courses; last as isLast, index as i">
+        {{i}} - {{ course.name }} <span *ngIf="isLast">(last element of the list)</span>
+        <button (click)="onChange(course)">Remove Item</button>
+    </li>
+</ul> -->
+<!-- 69 ngFor and trackBy -->
+<!-- <button (click)="loadCourses()">Load Courses</button>
+<ul>
+    <li *ngFor="let course of courses; trackBy: trackCourse">
+        {{ course.name}}
+    </li>
+</ul> -->
+<!--
+72 ngStyle
+<button 
+    [ngStyle]="{
+        'background-color': canSave? 'blue': 'gray',
+        'color': canSave? 'white': 'black',
+        'fontWeight': canSave? 'bold': 'normal'
+    }" (click)="onClick()">
+72 canSave?
+</button> -->
+<!-- 73. Safe Traversal Operator -->
+<!-- <p></p> 
+ <span> {{ task.asignee?.name }}</span> -->
+<!-- 74 Creating Custom Directives -->
+<!-- <label for="appInputFormat">74 appInputFormat:  </label> <input id='appInputFormat' type="text" appInputFormat [format]="'uppercase'" value="appInputFormat">  -->
+<!-- Section:6 Assignment -->
+<!-- <app-zippy title="Shipping Details">
+    Shipping Details Content
+</app-zippy>
+<app-zippy title="Billing Details">
+    Billing Details Content
+</app-zippy> -->
+<!-- 76 Building a Bootstrap Form -->
+<!-- <app-contact-form></app-contact-form> -->
+<!-- Assignment 6: Course Form -->
+<!-- <app-new-course-form></app-new-course-form> -->
+<!-- 91 Building a bootstrap Form -->
+<!-- <signup-form></signup-form> -->
+<!-- 101 FormArray -->
+<course-form></course-form>
+
 

@@ -1,0 +1,36 @@
+<h2>{{"Title:" + title }}</h2>
+<!-- <ul>
+     <li *ngFor="let course of courses">
+     {{ course }}
+     </li>
+</ul>
+<img src="{{ imageUrl }}" />
+<img src="" alt="">
+<img [src]="imageUrl1" />
+<table>
+    <tr>
+        <td [attr.colspan]="colSpan">11</td>
+
+    </tr>
+</table>
+
+<div (click)="onDivSave()">
+<button 
+    class="btn-primary" 
+    [class.btn]="btnIsActive" 
+    [style.backgroundColor]="isActive? 'darkgreen':'red' " 
+    (click)="onSave($event)">
+        Save
+</button>
+</div> -->
+<!-- banana in the box -->
+
+<input type="text" [(ngModel)]="email" (keyup.enter)="onKeyUp()"/> <br/>
+{{ course.title| uppercase | lowercase}} <br/>
+{{ course.students | number}} <br/>
+{{ course.rating | number:'1.2-2'}} <br/>
+{{ course.price | currency: 'AUD': true: '3.2-2'}} <br/>
+{{ course.releaseDate | date: 'shortDate' }} <br/>
+{{ text | summary: 30 }}
+
+
